@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Telegram-style palette */
+  --tg-blue: #4ea4f5;
+  --tg-blue-dark: #3d8bd9;
+  --tg-sidebar-bg: #ffffff;
+  --tg-sidebar-border: #e4e7eb;
+  --tg-row-hover: #f2f5f8;
+  --tg-row-active: #e3f1ff;
+  --tg-chat-bg: #e7ecf0;
+  --tg-bubble-in: #ffffff;
+  --tg-bubble-in-text: #1c1c1e;
+  --tg-bubble-out: var(--tg-blue);
+  --tg-bubble-out-text: #ffffff;
+  --tg-muted: #8b94a0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-tg-blue: var(--tg-blue);
+  --color-tg-blue-dark: var(--tg-blue-dark);
+  --color-tg-sidebar-bg: var(--tg-sidebar-bg);
+  --color-tg-sidebar-border: var(--tg-sidebar-border);
+  --color-tg-row-hover: var(--tg-row-hover);
+  --color-tg-row-active: var(--tg-row-active);
+  --color-tg-chat-bg: var(--tg-chat-bg);
+  --color-tg-bubble-in: var(--tg-bubble-in);
+  --color-tg-bubble-in-text: var(--tg-bubble-in-text);
+  --color-tg-bubble-out: var(--tg-bubble-out);
+  --color-tg-bubble-out-text: var(--tg-bubble-out-text);
+  --color-tg-muted: var(--tg-muted);
+  --font-sans: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+}
+
+.animate-overlay-in {
+  animation: overlay-in 0.15s ease-out;
+}
+
+.animate-modal-in {
+  animation: modal-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}

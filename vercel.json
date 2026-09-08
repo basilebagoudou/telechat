@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "web": {
+      "root": "frontend/"
+    },
+    "moderation": {
+      "root": "backend/",
+      "entrypoint": "main:app"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/py/(.*)", "destination": { "service": "moderation" } },
+    { "source": "/(.*)", "destination": { "service": "web" } }
+  ]
+}
